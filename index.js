@@ -10,22 +10,26 @@ function getLists() {
         .then(lists => {
             console.log(lists);
             lists.data.forEach(list => {
-                const listMarkup = `
+                render(list)
+            })
+        })
+}
+
+function render(list) {
+    const listMarkup = `
                     <div data-id=${list.id}>
                         <h3>${list.attributes.name}</h3>
                         <ul id="words-${list.id}"></ul>
-                        <button data-id=${list.id}>edit</button>
+                        <button data-id=${list.id}>select</button>
                     </div>
                     <br><br>`;
 
-                document.querySelector('#list-container').innerHTML += listMarkup
+    document.querySelector('#list-container').innerHTML += listMarkup
 
-                list.attributes.sightwords.forEach(word => {
-                    const wordsMarkup = `
+    list.attributes.sightwords.forEach(word => {
+        const wordsMarkup = `
                         <li>${word.word}</li>
                     `
-                    document.querySelector(`#words-${list.id}`).innerHTML += wordsMarkup
-                })
-            })
-        })
+        document.querySelector(`#words-${list.id}`).innerHTML += wordsMarkup
+    })
 }
