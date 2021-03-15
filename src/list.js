@@ -15,12 +15,9 @@ class List {
                                 <button data-id=${this.id}>select</button>
                             </div>
                             <br><br>`;
-
-
-
-
-
     }
+
+
 }
 
 List.all = [];

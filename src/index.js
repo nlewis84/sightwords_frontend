@@ -4,6 +4,7 @@ const SIGHTWORD_URL = "http://localhost:3000/api/v1/sightwords";
 
 document.addEventListener('DOMContentLoaded', () => {
     getLists();
+    selectScreen();
 });
 
 function getLists() {
@@ -18,9 +19,24 @@ function getLists() {
                     let newWord = new Sightword(word);
                     document.querySelector(`#words-${list.id}`).innerHTML += newWord.renderSightword();
                 })
+
             })
         })
 }
 
+function selectScreen() {
+    setTimeout(() => {
+        const button = document.querySelector('button');
+        button.addEventListener('click', (e) => {
+            document.querySelector('#list-container').innerHTML = "";
+            document.querySelector('#list-container').innerHTML += `<h1>Get READY!</h1>`;
+            setTimeout(() => {
+                let audio = Sightword.all[0].renderAudio()
+                document.querySelector('#list-container').innerHTML = "";
+                document.querySelector('#list-container').innerHTML = audio;
+            }, 3000)
+        });
+    }, 1000)
 
+}
 
