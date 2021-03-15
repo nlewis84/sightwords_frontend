@@ -1,15 +1,18 @@
-const endPoint = "http://localhost:3000/api/v1/lists";
+const BASE_URL = "http://localhost:3000";
+const LIST_URL = "http://localhost:3000/api/v1/lists";
+const SIGHTWORD_URL = "http://localhost:3000/api/v1/sightwords";
 
 document.addEventListener('DOMContentLoaded', () => {
     getLists();
 });
 
 function getLists() {
-    fetch(endPoint)
+    fetch(LIST_URL)
         .then(response => response.json())
         .then(lists => {
-            console.log(lists);
             lists.data.forEach(list => {
+                let newList = new List(list)
+
                 render(list)
             })
         })
@@ -27,6 +30,8 @@ function render(list) {
     document.querySelector('#list-container').innerHTML += listMarkup
 
     list.attributes.sightwords.forEach(word => {
+        let newWord = new Sightword(word);
+
         const wordsMarkup = `
                         <li>${word.word}</li>
                     `
