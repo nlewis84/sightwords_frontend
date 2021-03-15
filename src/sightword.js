@@ -5,6 +5,8 @@ class Sightword {
         this.pronunciation_url = data.pronunciation_url;
         Sightword.all.push(this);
     }
+
+    renderSightword() { return `<li>${this.word}</li>` }
 }
 
 Sightword.all = [];
