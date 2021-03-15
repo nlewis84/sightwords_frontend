@@ -27,14 +27,12 @@ function getLists() {
 function selectScreen() {
     setTimeout(() => {
         const button = document.querySelector('button');
+
         button.addEventListener('click', (e) => {
             document.querySelector('#list-container').innerHTML = "";
             document.querySelector('#list-container').innerHTML += `<h1>Get READY!</h1>`;
-            setTimeout(() => {
-                let audio = Sightword.all[0].renderAudio()
-                document.querySelector('#list-container').innerHTML = "";
-                document.querySelector('#list-container').innerHTML = audio;
-            }, 3000)
+
+            playGame();
         });
     }, 1000)
 
