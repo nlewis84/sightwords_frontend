@@ -19,23 +19,26 @@ function getLists() {
                     let newWord = new Sightword(word);
                     document.querySelector(`#words-${list.id}`).innerHTML += newWord.renderSightword();
                 })
-                newList.listWords()
+                // newList.listWords()
             })
         })
 }
 
 function selectScreen() {
     setTimeout(() => {
-        const button = document.querySelector('button');
+        const button = document.querySelectorAll('button');
 
-        button.addEventListener('click', (e) => {
-            debugger
-            document.querySelector('#list-container').innerHTML = "";
-            document.querySelector('#list-container').innerHTML += `<h1>Get READY!</h1>`;
-            const currentList = e.currentTarget.attributes[0].nodeValue
+        button.forEach(e => {
+            e.addEventListener('click', (e) => {
+                document.querySelector('#list-container').innerHTML = "";
+                document.querySelector('#list-container').innerHTML += `<h1>Get READY!</h1>`;
+                const currentListId = parseInt(e.currentTarget.attributes[0].nodeValue)
+                const currentList = List.all.find(e => e.id === currentListId)
 
-            playGame(currentList);
+                playGame(currentList);
+            })
         });
+
     }, 1000)
 
 }

@@ -1,4 +1,5 @@
 function playGame(list) {
+    debugger
     const listId = list
     getList(listId)
     setTimeout(() => {
