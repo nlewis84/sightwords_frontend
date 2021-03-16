@@ -5,6 +5,7 @@ const SIGHTWORD_URL = "http://localhost:3000/api/v1/sightwords";
 document.addEventListener('DOMContentLoaded', () => {
     getLists();
     selectScreen();
+
 });
 
 function getLists() {
@@ -31,7 +32,6 @@ function selectScreen() {
         button.forEach(e => {
             e.addEventListener('click', (e) => {
                 document.querySelector('#list-container').innerHTML = "";
-                document.querySelector('#list-container').innerHTML += `<h1>Get READY!</h1>`;
                 const currentListId = parseInt(e.currentTarget.attributes[0].nodeValue)
                 const currentList = List.all.find(e => e.id === currentListId)
 
