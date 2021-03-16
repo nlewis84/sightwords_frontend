@@ -10,7 +10,7 @@ function playGame(list) {
 function addAudio(wordObj) {
     let audio = wordObj.renderAudio();
     // 
-    document.querySelector('#list-container').innerHTML += audio;
+    document.querySelector('#list-container').innerHTML = audio;
 }
 
 function addTextInput(wordObj) {
