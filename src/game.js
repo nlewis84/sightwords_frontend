@@ -1,20 +1,24 @@
 function playGame(list) {
+
+    const gameList = list
+    gameList.listWords().forEach(e => {
+        addAudio(e);
+    })
     debugger
-    const listId = list
-    getList(listId)
-    setTimeout(() => {
 
-        let audio = Sightword.all[0].renderAudio()
-        document.querySelector('#list-container').innerHTML = "";
-        document.querySelector('#list-container').innerHTML = audio;
 
-    }, 3000)
+
+    // setTimeout(() => {
+    //     debugger
+    //     let audio = Sightword.all[0].renderAudio()
+    //     document.querySelector('#list-container').innerHTML = "";
+    //     document.querySelector('#list-container').innerHTML = audio;
+
+    // }, 3000)
 }
 
-// function getList(listId) {
-//     fetch(`http://localhost:3000/api/v1/lists/${listId}`)
-//         .then(response => response.json())
-//         .then(list => {
-//             wordArray = list.data.attributes.sightwords
-//         })
-// }
+function addAudio(e) {
+    let audio = e.renderAudio();
+    document.querySelector('#list-container').innerHTML = "";
+    document.querySelector('#list-container').innerHTML = audio;
+}
