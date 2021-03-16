@@ -3,6 +3,7 @@ class Sightword {
         this.id = data.id;
         this.word = data.word;
         this.pronunciation_url = data.pronunciation_url;
+        this.list_id = data.list_id
         Sightword.all.push(this);
     }
 
@@ -11,6 +12,7 @@ class Sightword {
     renderAudio() {
         return `<audio controls id="audio-${this.id}" src="${this.pronunciation_url}"></audio>`
     }
+
 
 }
 

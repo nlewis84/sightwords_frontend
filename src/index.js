@@ -19,7 +19,7 @@ function getLists() {
                     let newWord = new Sightword(word);
                     document.querySelector(`#words-${list.id}`).innerHTML += newWord.renderSightword();
                 })
-
+                newList.listWords()
             })
         })
 }
@@ -29,6 +29,7 @@ function selectScreen() {
         const button = document.querySelector('button');
 
         button.addEventListener('click', (e) => {
+            debugger
             document.querySelector('#list-container').innerHTML = "";
             document.querySelector('#list-container').innerHTML += `<h1>Get READY!</h1>`;
             const currentList = e.currentTarget.attributes[0].nodeValue

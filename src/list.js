@@ -1,7 +1,6 @@
 class List {
     constructor(list, listAttributes) {
-
-        this.id = list.id;
+        this.id = parseInt(list.id);
         this.name = listAttributes.name;
         List.all.push(this);
 
@@ -17,7 +16,9 @@ class List {
                             <br><br>`;
     }
 
-
+    listWords() {
+        return Sightword.all.filter(e => e.list_id === this.id)
+    }
 }
 
 List.all = [];
