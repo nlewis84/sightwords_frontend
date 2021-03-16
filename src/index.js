@@ -31,8 +31,9 @@ function selectScreen() {
         button.addEventListener('click', (e) => {
             document.querySelector('#list-container').innerHTML = "";
             document.querySelector('#list-container').innerHTML += `<h1>Get READY!</h1>`;
+            const currentList = e.currentTarget.attributes[0].nodeValue
 
-            playGame();
+            playGame(currentList);
         });
     }, 1000)
 
