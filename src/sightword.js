@@ -13,6 +13,9 @@ class Sightword {
         return `<audio controls id="audio-${this.id}" src="${this.pronunciation_url}"></audio>`
     }
 
+    characterize() {
+        return this.word.split("")
+    }
 
 }
 
