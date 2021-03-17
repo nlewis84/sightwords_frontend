@@ -1,11 +1,3 @@
-// initial state
-let timeElapsed = 0;
-let total_errors = 0;
-let errors = 0;
-let wordId = 0;
-
-
-
 function playGame(list) {
 
     const gameList = list
@@ -46,9 +38,47 @@ function addInput(e) {
     input.id = e.id;
     input.size = "10";
 
+
+
     const container = document.querySelector('#list-container');
     const newDiv = document.createElement("div");
     newDiv.className = "word-input";
     container.appendChild(newDiv);
     container.lastElementChild.appendChild(input);
+    // debugger
+    input.addEventListener("input", inputListener);
+
+
 }
+
+function inputListener(e) {
+
+    currentInput = e.target.value;
+    currentInputArray = currentInput.split('');
+    currentWord = this.parentElement.previousElementSibling.previousElementSibling;
+    currentWordSpanArray = currentWord.querySelectorAll('span');
+    currentWordArray = currentWord.innerText.split('');
+
+    currentWordSpanArray.forEach((char, index) => {
+        let typedChar = currentInputArray[index]
+
+        // character not currently typed 
+        if (typedChar == null) {
+            char.classList.remove('correct-char');
+            char.classList.remove('incorrect-char');
+
+            // correct character 
+        } else if (typedChar === char.innerText) {
+            char.classList.add('correct-char');
+            char.classList.remove('incorrect-char');
+
+            // incorrect character 
+        } else {
+            char.classList.add('incorrect-char');
+            char.classList.remove('correct-char');
+        }
+    });
+
+
+}
+
