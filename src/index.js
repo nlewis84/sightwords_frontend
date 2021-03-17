@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     getLists();
     selectScreen();
 
+    const createListForm = document.querySelector("#create-list-form")
+
+    createListForm.addEventListener("submit", (e) => {
+        createFormHandler(e)
+    })
 });
 
 function getLists() {
@@ -43,3 +48,13 @@ function selectScreen() {
 
 }
 
+function createFormHandler(e) {
+    e.preventDefault();
+    console.log(e);
+    const nameInput = document.querySelector("#input-name").value;
+    postListFetch(nameInput);
+}
+
+function postListFetch(name) {
+
+}
