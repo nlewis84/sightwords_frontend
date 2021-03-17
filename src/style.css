@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: powderblue;
+    background-color: grey;
 }
 
 h1 {
@@ -20,7 +20,7 @@ p {
 }
 
 .word-text {
-    color: white; /* change this to powderblue */
+    color: grey; /* change this to powderblue */
     font-size: 40px;
 }
 
