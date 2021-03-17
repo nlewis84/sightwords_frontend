@@ -15,9 +15,13 @@
 <body>
 
     <body>
-        <button onClick="window.location.reload();">Restart Game</button>
-        <div class="form-container">
-            <form id="create-list-form" style="">
+        <button id="restart" onClick="window.location.reload();">Restart Game</button>
+        <button id="new-list" onClick='document.querySelector("#create-list-form").style="display: block;" '>Create New
+            List</button>
+        <button id="new-word" onClick='document.querySelector("#create-word-form").style="display: block;" '>Create New
+            Word</button>
+        <div class=" form-container">
+            <form id="create-list-form" style="display: none;">
                 <!-- change this to style: none? -->
                 <h3>Create a List!</h3>
 
@@ -28,7 +32,7 @@
         </div>
 
         <div class="form-container">
-            <form id="create-word-form" style="">
+            <form id="create-word-form" style="display: none;">
                 <!-- change this to style: none? -->
                 <h3>Create a Word!</h3>
 

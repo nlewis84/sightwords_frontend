@@ -40,7 +40,7 @@ function getLists() {
 
 function selectScreen() {
     setTimeout(() => {
-        const button = document.querySelectorAll('button');
+        const button = document.querySelectorAll('button.select');
 
         button.forEach(e => {
             e.addEventListener('click', (e) => {
