@@ -26,10 +26,17 @@ function addWordBox(wordObj) {
 }
 
 function spanized(array) {
+    const container = document.querySelector('#list-container');
+    const newDiv = document.createElement("div");
+    newDiv.className = "word-text";
+    container.appendChild(newDiv);
+
     array.forEach(char => {
-        const container = document.querySelector('#list-container');
-        const newDiv = document.createElement("div");
+
+
         const charSpan = document.createElement('span')
+
+
 
         charSpan.innerText = char
         container.lastElementChild.appendChild(charSpan)

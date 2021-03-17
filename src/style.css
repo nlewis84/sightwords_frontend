@@ -17,6 +17,10 @@ p {
 
 .word-box {
     color: white;
+}
+
+.word-text {
+    color: white; /* change this to powderblue */
     font-size: 40px;
 }
 

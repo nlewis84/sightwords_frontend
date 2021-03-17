@@ -10,7 +10,7 @@ class Sightword {
     renderSightword() { return `<li>${this.word}</li>` }
 
     renderAudio() {
-        return `<audio controls id="audio-${this.id}" src="${this.pronunciation_url}"></audio>`
+        return `<audio controls id="audio-${this.id}" src="${this.pronunciation_url}"></audio><br>`
     }
 
     characterize() {
