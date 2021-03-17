@@ -16,6 +16,35 @@
 
     <body>
         <button onClick="window.location.reload();">Restart Game</button>
+        <div class="form-container">
+            <form id="create-list-form" style="">
+                <!-- change this to style: none? -->
+                <h3>Create a List!</h3>
+
+                <input id="input-name" class="simple" type="text" name="name" value=""
+                    placeholder="Enter List Name Here">
+                <input id="create-button" class="simple" type="submit" name="submit" value="Create New List">
+            </form>
+        </div>
+
+        <div class="form-container">
+            <form id="create-word-form" style="">
+                <!-- change this to style: none? -->
+                <h3>Create a Word!</h3>
+
+                <input id="input-word" class="simple" type="text" name="name" value=""
+                    placeholder="Enter Word Here (lowercase)">
+                <input id="input-pronunciation-url" class="simple" type="text" name="pronunciation_url" value=""
+                    placeholder="Enter URL to Pronunciation Sound File Here">
+                <select id="lists" name="lists">
+                    <option value="1">Easy</option>
+                    <option value="2">Medium-Easy</option>
+                    <option value="3">Hard</option>
+                </select>
+                <input id="create-button" class="simple" type="submit" name="submit" value="Create New Word">
+            </form>
+        </div>
+
         <div id="list-container" class="parent"></div>
 
     </body>
