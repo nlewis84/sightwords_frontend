@@ -16,6 +16,16 @@
 
     <body>
         <button onClick="window.location.reload();">Restart Game</button>
+        <div class="form-container">
+            <form id="create-list-form" style="">
+                <!-- change this to style: none? -->
+                <h3>Create a List!</h3>
+
+                <input id="input-name" class="simple" type="text" name="name" value=""
+                    placeholder="Enter List Name Here">
+                <input id="create-button" class="simple" type="submit" name="submit" value="Create New List">
+            </form>
+        </div>
         <div id="list-container" class="parent"></div>
 
     </body>
