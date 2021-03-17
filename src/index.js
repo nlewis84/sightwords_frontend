@@ -25,7 +25,6 @@ function getLists() {
                     let newWord = new Sightword(word);
                     document.querySelector(`#words-${list.id}`).innerHTML += newWord.renderSightword();
                 })
-                // newList.listWords()
             })
         })
 }
@@ -37,7 +36,7 @@ function selectScreen() {
         button.forEach(e => {
             e.addEventListener('click', (e) => {
                 document.querySelector('#list-container').innerHTML = "";
-                const currentListId = parseInt(e.currentTarget.attributes[0].nodeValue)
+                const currentListId = parseInt(e.currentTarget.attributes[1].nodeValue)
                 const currentList = List.all.find(e => e.id === currentListId)
 
                 playGame(currentList);
@@ -56,5 +55,25 @@ function createFormHandler(e) {
 }
 
 function postListFetch(name) {
+    const bodyData = { name };
 
+    fetch(LIST_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bodyData)
+    })
+        .then(response => response.json())
+        .then(list => {
+            console.log(list);
+
+            let newList = new List(list, list.data.attributes)
+            document.querySelector('#list-container').innerHTML += newList.renderListCard()
+
+            list.data.attributes.sightwords.forEach(word => {
+                let newWord = new Sightword(word);
+                document.querySelector(`#words-${list.id}`).innerHTML += newWord.renderSightword();
+            })
+
+        })
 }
+

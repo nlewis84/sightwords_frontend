@@ -45,7 +45,6 @@ function addInput(e) {
     newDiv.className = "word-input";
     container.appendChild(newDiv);
     container.lastElementChild.appendChild(input);
-    // debugger
     input.addEventListener("input", inputListener);
 
 
