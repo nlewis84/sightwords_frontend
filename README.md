@@ -1,3 +1,4 @@
+# README
 # sightwords_frontend
 
 This is the frontend for my Sightwords App.
