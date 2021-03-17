@@ -12,3 +12,7 @@ The backend for this app is https://github.com/nlewis84/sightwords_backend.
 * start Postgres Server with sudo service postgresql start (backend)
 * start Rails Server with rails s (backend)
 * open index.html (frontend)
+
+## App Walkthrough
+
+https://youtu.be/BF9pcEF9kWA
