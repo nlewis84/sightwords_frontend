@@ -3,6 +3,7 @@ const LIST_URL = "http://localhost:3000/api/v1/lists";
 const SIGHTWORD_URL = "http://localhost:3000/api/v1/sightwords";
 
 document.addEventListener('DOMContentLoaded', () => {
+    formButtons();
     getLists();
     selectScreen();
 
@@ -18,6 +19,29 @@ document.addEventListener('DOMContentLoaded', () => {
         createWordFormHandler(e)
     })
 });
+
+function formButtons() {
+    const newListButton = document.querySelector("button#new-list");
+    const newWordButton = document.querySelector("button#new-word");
+    const listForm = document.querySelector("#create-list-form");
+    const wordForm = document.querySelector("#create-word-form");
+
+    newListButton.onclick = function () {
+        if (listForm.style.display === "none") {
+            document.querySelector("#create-list-form").style = "display: block;"
+        } else {
+            document.querySelector("#create-list-form").style = "display: none;"
+        }
+    }
+
+    newWordButton.onclick = function () {
+        if (wordForm.style.display === "none") {
+            document.querySelector("#create-word-form").style = "display: block;"
+        } else {
+            document.querySelector("#create-word-form").style = "display: none;"
+        }
+    }
+}
 
 function getLists() {
     fetch(LIST_URL)
