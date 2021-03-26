@@ -1,10 +1,18 @@
+:root {
+    --color1: #D6D6D6;
+    --color2: #FFEE32;
+    --color3: #FFD100;
+    --color4: #202020;
+    --color5: #333533;
+}
+
 .parent {
     display: grid;
     place-items: center;
 }
 
 body {
-    background-color: darkgray;
+    background-color: var(--color1);
 }
 
 h1 {
@@ -27,19 +35,19 @@ p {
 }
 
 div#list-container>div.word-box {
-    background-color: darkgrey;
+    background-color: var(--color1);
     color: white;
     box-shadow: 0 0 0 0;
 }
 
 div#list-container>div.word-input {
-    background-color: darkgrey;
+    background-color: var(--color1);
     color: white;
     box-shadow: 0 0 0 0;
 }
 
 .word-text {
-    color: darkgray; /* change this to powderblue */
+    color: var(--color1); /* change this to powderblue */
     font-size: 150px;
     box-shadow: 0 0 0 0;
 }
@@ -59,13 +67,13 @@ div {
 }
 
 div#list-container>div.word-text {
-    background-color: darkgrey;
+    background-color: var(--color1);
     box-shadow: 0 0 0 0;
     display: flex;
 }
 
 div#list-container>div {
-    background-color: rgb(76, 74, 241);
+    background-color: var(--color2);
     box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
