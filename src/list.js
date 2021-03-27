@@ -8,12 +8,12 @@ class List {
 
     renderListCard() {
         return `
-                            <div data-id=${this.id}>
-                                <h3>${this.name}</h3>
-                                <ul id="words-${this.id}"></ul>
-                                <button class="select" data-id=${this.id}>select</button>
-                            </div>
-                            <br><br>`;
+            <div data-id=${this.id}>
+                <h3>${this.name}</h3>
+                <ul id="words-${this.id}"></ul>
+                <button class="select" data-id=${this.id}>select</button>
+            </div>
+            <br><br>`;
     }
 
     listWords() {

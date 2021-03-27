@@ -2,13 +2,13 @@ const BASE_URL = "http://localhost:3000";
 const LIST_URL = "http://localhost:3000/api/v1/lists";
 const SIGHTWORD_URL = "http://localhost:3000/api/v1/sightwords";
 
+// DOMContentLoaded -- Site setup
 document.addEventListener('DOMContentLoaded', () => {
     formButtons();
     getLists();
     selectScreen();
 
     const createListForm = document.querySelector("#create-list-form")
-
     createListForm.addEventListener("submit", (e) => {
         createFormHandler(e)
     })
@@ -20,12 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 });
 
+// Setup your Form Manipulation Buttons
 function formButtons() {
     const newListButton = document.querySelector("button#new-list");
     const newWordButton = document.querySelector("button#new-word");
     const listForm = document.querySelector("#create-list-form");
     const wordForm = document.querySelector("#create-word-form");
 
+    // Toggle the display of these forms
     newListButton.onclick = function () {
         if (listForm.style.display === "none") {
             document.querySelector("#create-list-form").style = "display: block;"
@@ -33,7 +35,6 @@ function formButtons() {
             document.querySelector("#create-list-form").style = "display: none;"
         }
     }
-
     newWordButton.onclick = function () {
         if (wordForm.style.display === "none") {
             document.querySelector("#create-word-form").style = "display: block;"
@@ -42,7 +43,9 @@ function formButtons() {
         }
     }
 }
+// Dry up the toggle above!
 
+// List fetch
 function getLists() {
     fetch(LIST_URL)
         .then(response => response.json())
@@ -62,6 +65,7 @@ function getLists() {
         })
 }
 
+// Build the "index" select screen
 function selectScreen() {
     setTimeout(() => {
         const button = document.querySelectorAll('button.select');
@@ -80,6 +84,7 @@ function selectScreen() {
 
 }
 
+// Create List Form
 function createFormHandler(e) {
     e.preventDefault();
     console.log(e);
@@ -87,6 +92,7 @@ function createFormHandler(e) {
     postListFetch(nameInput);
 }
 
+// Create Word Form
 function createWordFormHandler(e) {
     e.preventDefault();
     console.log(e);
@@ -99,6 +105,7 @@ function createWordFormHandler(e) {
     postWordFetch(wordInput, pronunciationInput, listId);
 }
 
+// Post Fetch for adding a new list
 function postListFetch(name) {
     const bodyData = { name };
 
@@ -121,6 +128,7 @@ function postListFetch(name) {
         })
 }
 
+// Post Fetch for adding words to lists
 function postWordFetch(word, pronunciation_url, list_id) {
     const bodyData = { word, pronunciation_url, list_id };
 
@@ -135,6 +143,7 @@ function postWordFetch(word, pronunciation_url, list_id) {
         })
 }
 
+// Add an option to the dropdown for available lists
 function addOption(name, value) {
     let option = document.createElement("option");
     let select = document.querySelector("#lists");

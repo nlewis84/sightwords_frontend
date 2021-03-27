@@ -1,11 +1,12 @@
+// Main function of playing the game
 function playGame(list) {
-
     const gameList = list
     gameList.listWords().forEach(e => {
         addWordBox(e);
     })
 }
 
+// Adds a formatted word to the page
 function addWordBox(wordObj) {
     let characterized = wordObj.characterize();
     spanized(characterized);
@@ -19,6 +20,8 @@ function addWordBox(wordObj) {
 
 }
 
+
+// Makes every letter of an array into the letter contained in a span
 function spanized(array) {
     const container = document.querySelector('#list-container');
     const newDiv = document.createElement("div");
@@ -32,13 +35,12 @@ function spanized(array) {
     })
 }
 
+// Adds the input field to a word
 function addInput(e) {
     const input = document.createElement("input");
     input.type = "text";
     input.id = e.id;
     input.size = "10";
-
-
 
     const container = document.querySelector('#list-container');
     const newDiv = document.createElement("div");
@@ -50,14 +52,15 @@ function addInput(e) {
 
 }
 
+// Add listener to input field to check against the game logic
 function inputListener(e) {
-
     currentInput = e.target.value;
     currentInputArray = currentInput.split('');
     currentWord = this.parentElement.previousElementSibling.previousElementSibling;
     currentWordSpanArray = currentWord.querySelectorAll('span');
     currentWordArray = currentWord.innerText.split('');
 
+    // Main game logic ... This could be made into its own function.
     currentWordSpanArray.forEach((char, index) => {
         let typedChar = currentInputArray[index]
 

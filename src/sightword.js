@@ -13,10 +13,10 @@ class Sightword {
         return `<audio controls id="audio-${this.id}" src="${this.pronunciation_url}"></audio><br>`
     }
 
+    // Returns the word split into an array
     characterize() {
         return this.word.split("")
     }
-
 }
 
 Sightword.all = [];
