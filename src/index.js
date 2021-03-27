@@ -1,6 +1,7 @@
 const BASE_URL = "http://localhost:3000";
 const LIST_URL = "http://localhost:3000/api/v1/lists";
 const SIGHTWORD_URL = "http://localhost:3000/api/v1/sightwords";
+let darkModeOn = false;
 
 // DOMContentLoaded -- Site setup
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function formButtons() {
     const newListButton = document.querySelector("button#new-list");
     const newWordButton = document.querySelector("button#new-word");
+    //dark mode
+    const darkModeButton = document.querySelector("button#dark-mode");
     const listForm = document.querySelector("#create-list-form");
     const wordForm = document.querySelector("#create-word-form");
 
@@ -42,6 +45,27 @@ function formButtons() {
             document.querySelector("#create-word-form").style = "display: none;"
         }
     }
+
+    // Dark mode on click
+    // Needs some work on the game page divs
+
+    // darkModeButton.onclick = function () {
+    //     if (darkModeOn === false) {
+    //         document.querySelector("body").style = "background-color: var(--color4);"
+    //         let all = document.querySelectorAll("div.word-text");
+    //         for (let i = 0; i < all.length; i++) {
+    //             all[i].style = "background-color: var(--color4);"
+    //         }
+    //         darkModeOn = true;
+    //     } else {
+    //         document.querySelector("body").style = "background-color: var(--color1);"
+    //         let all = document.querySelectorAll("div.word-text");
+    //         for (let i = 0; i < all.length; i++) {
+    //             all[i].style = "background-color: var(--color1);"
+    //         }
+    //         darkModeOn = false;
+    //     }
+    // }
 }
 // Dry up the toggle above!
 

@@ -1,6 +1,7 @@
 // Main function of playing the game
 function playGame(list) {
     const gameList = list
+
     gameList.listWords().forEach(e => {
         addWordBox(e);
     })
@@ -19,7 +20,6 @@ function addWordBox(wordObj) {
     addInput(wordObj);
 
 }
-
 
 // Makes every letter of an array into the letter contained in a span
 function spanized(array) {
