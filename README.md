@@ -8,7 +8,7 @@ The backend for this app is [here](https://github.com/nlewis84/sightwords_backen
 
 * start Postgres Server with `sudo service postgresql start` (backend)
 * start Rails Server with `rails s` (backend)
-* open `index.html` (frontend)
+* open `index.html` in the sightwords_frontend directory (frontend)
 
 ## :newspaper: App Walkthrough
 
